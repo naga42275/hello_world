@@ -1,0 +1,15 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+	http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+    <flow name="name1">
+        <http:listener path="/hello" config-ref="name" doc:name="name" doc:id="cawfuy" >
+          <http:response statusCode="#[vars.httpStatus default 200]">
+            <http:headers>#[vars.outboundHeaders default {}]</http:headers>
+          </http:response>
+          <http:error-response statusCode="#[vars.httpStatus default 500]">
+            <http:body>#[payload]</http:body>
+            <http:headers>#[vars.outboundHeaders default {}]</http:headers>
+          </http:error-response>
+        </http:listener>
+        <logger doc:name="Logger" doc:id="lejkos" message="Welcome to ACB.."/></flow>
+</mule>

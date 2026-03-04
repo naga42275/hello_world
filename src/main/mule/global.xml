@@ -6,6 +6,6 @@
 	http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
   
   <http:listener-config name="name">
-      <http:listener-connection host="localhost" port="8083"/>
+      <http:listener-connection host="localhost" port="8081"/>
   </http:listener-config>
 </mule>
